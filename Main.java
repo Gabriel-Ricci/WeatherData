@@ -8,5 +8,14 @@ public class Main
         ArrayList<Double> t = new ArrayList<Double>();
         for(double n : temps) t.add(n);
         WeatherData w = new WeatherData(t);
+        w.cleanData(85.0, 120.0);
+        System.out.println(w);
+        double[] newTemps = {
+            100.5, 98.5, 102, 103.9, 87.5, 105.2,
+            90.3, 94.8, 109.1, 102.1, 107.4, 93.2};
+        ArrayList<Double> newList = new ArrayList<Double>();
+        for(double n : newTemps) newList.add(n);
+        WeatherData b = new WeatherData(newList);
+        System.out.println(b.longestHeatWave(100.5));
     }
 }
